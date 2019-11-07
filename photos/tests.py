@@ -68,3 +68,53 @@ class CategoryTestClass(TestCase):
         self.category.delete_category()
         category = Category.objects.all()
         self.assertTrue(len(category)==0)
+
+class ImageTestClass(TestCase):
+    def setUp(self):
+        self.location = Location(location_name = 'kibra')
+        self.location.save()
+        
+        self.category = Category(category_name = 'creativity')
+        self.category.save()
+        
+        self.image_test = Image(image_name = 'image_test', image_description = 'This is a test image', location=self.location, category=self.category)
+        
+    def test_inastance(self):
+        self.assertTrue(isinstance(self.image_test,Image))
+        
+        
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+        
+    def test_save_image(self):
+        self.image_test.save_image()
+        images = Image.objects.all()
+        self.assertFalse(len(images)>0)
+        
+    def test_update_image(self):
+       
+        self.image_test.save_image()
+        self.image_test.update_image(self.image_test.id,'media/test_image.jpg')
+        updated_image = Image.objects.filter(image='media/test_image.jpg')
+        self.assertFalse(len(updated_image)>0)
+        
+    def test_delete_image(self):
+        self.image_test.delete_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images)==0)
+        
+    # def test_get_image_by_id(self):
+    #     got_image = self.image_test.get_image_by_id(id)
+    #     image = Image.objects.filter(id=self.image_test.id)
+    #     self.assertTrue(len(got_image))
+        
+    # def test_filter_image_by_location(self):
+    #     location = 'Kibra'
+    #     got_image = self.image_test.filter_by_location(location)
+    #     self.assertTrue(len(got_image)>1)
+        
+   
+        
+        

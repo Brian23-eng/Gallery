@@ -47,3 +47,23 @@ class Image(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to = 'pics')
     
+    
+    def save_image(self):
+        self.save
+        
+    def delete_image(self):
+        self.delete
+    
+    @classmethod
+    def update_image(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+        
+    @classmethod
+    def get_image_by_id(cls):
+        image = cls.objects.filter(id= id).all()
+        return image
+
+    # @classmethod
+    # def filter_by_location(cls,search_term):
+    #     locations = cls.objects.filter(location__location_name__icontains=search_term)
+    #     return locations
