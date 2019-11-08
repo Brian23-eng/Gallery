@@ -4,22 +4,25 @@
 <!-- looping through the photos -->
 
 <div class="container"></div>
-{% for image in images %}
-<div class="row">
 
+<div class="row">
+    {% for image in images %}
     <div class="col-md-3 card">
-        <img src="{{image.image.url}}" alt="" class="thumbnail" width='250px' data-toggle="modal" data-target='#myModal'>
+        <img src="{{image.image.url}}" alt="" class="img-thumbnail img-responsive" width='250px' data-toggle="modal" data-target='#{{image.id}}'>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade text-center" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Title</h4>
+                    <h4 class="modal-title" id="myModalLabel">{{image.image_name}}</h4>
+                    <img src="{{image.image.url}}" alt="" class="img-thumbnail img-responsive" width='250px' data-toggle="modal" data-target='#{{image.id}}'>
                 </div>
                 <div class="modal-body">
-                    <p>content body</p>
+                    <p>Description: {{image.image_description}}</p>
+                    <p>Location taken: {{image.location}}</p>
+                    <p>Category: {{image.category}}</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

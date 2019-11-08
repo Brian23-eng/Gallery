@@ -47,6 +47,9 @@ class Image(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to = 'pics')
     
+    def __str__(self):
+        return self.image_name
+    
     
     def save_image(self):
         self.save
@@ -69,7 +72,7 @@ class Image(models.Model):
         image = cls.objects.filter(id= id).all()
         return image
 
-    # @classmethod
-    # def filter_by_location(cls,search_term):
-    #     locations = cls.objects.filter(location__location_name__icontains=search_term)
-    #     return locations
+    @classmethod
+    def filter_by_location(cls,search_term):
+        locations = cls.objects.filter(location__location_name__icontains=search_term)
+        return locations

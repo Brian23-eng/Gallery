@@ -5,6 +5,9 @@ from . import views
 
 urlpatterns=[
     path('', views.photos, name='photos'),
+    path('search/', views.search_results, name='search_results'),
+    path('location/(/d+)', views.location, name='location')
+    
 ]
 
 
