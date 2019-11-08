@@ -1,4 +1,35 @@
-{% extends "base.html" %}{% block content %}{{ block.super}}
+{% extends "base.html" %} {% block content %}
 
 <h1 class="text-center">Welcome to my personal Gallery</h1>
+<!-- looping through the photos -->
+
+<div class="container"></div>
+{% for image in images %}
+<div class="row">
+
+    <div class="col-md-3 card">
+        <img src="{{image.image.url}}" alt="" class="thumbnail" width='250px' data-toggle="modal" data-target='#myModal'>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>content body</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+<!-- Displaying images -->
 {% endblock %}
