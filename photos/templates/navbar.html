@@ -1,36 +1,30 @@
-<nav>
-    <div class="navbar navbar-inverse fixed-top" role="navigation" style="border-radius: 0;">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Bran's Gallery</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            <a class="navbar-brand" href="{% url 'photos' %}" style="font-size: 20px;">Bran's Gallery</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{% url 'photos'%}"><i class="fa fa-fw fa-home"></i>Home</a></li>
-            </ul>
-        </div>
-        <!-- Adding a search form  -->
-        <div class="row">
-            <div class="col-sm-3 col-md-4 navbar-right">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'photos'%}">Bran' Gallery</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search category" name="category">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-            <!-- search form end -->
-        </div>
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'photos'%}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Locations
+              </a>
+                <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
+                    {% for location in locations %}
+                    <a class="dropdown-item" href="{% url 'location' location_name=location.location_name %}">
+                        <p>{{location.location_name}}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
 </nav>

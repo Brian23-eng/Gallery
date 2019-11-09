@@ -9,22 +9,25 @@ def photos(request):
     
     return render(request,'photos.html', {'images':images, 'locations':locations})
 
-def search_results(request):
-    if 'searchItem' in request.GET and request.GET["searchItem"]:
-        search_term = request.GET.get("searchItem")
-        searched_image = Image.search_by_category(search_term)
+def search_image(request):
+    categories = Category.objects.all()
+    locations = Location.objects.all()
+    if 'image' in request.GET and request.GET['image']:
+        search_term = request.GET.get('image')
+        images = Image.search_by_category(search_term)
         message = f"{search_term}"
-        
-        return render(request, "search.html", {"message": message, "category":searched_image})
+
+        return render(request, 'search.html',
+                      {'images': images, 'message': message, 'categories': categories,
+                       "locations": locations})
     else:
-        message = "You haven't searched for any term"
-        return render(request, 'search.html', {"message":message})
+        message = 'You havent searched yet'
+        return render(request, 'search.html', {"message": message})
     
-def location(request,location_id):
-    try:
-        location:location.objects.get(id = location_id)
-    except DoesNotExit:
-        raise Http404()
-    return render(request, "details.html", {"location":location})
-        
+def get_image_by_location(request,location_name):
+    location_images = Image.filter_by_location(location_name)
+    locations = Location.objects.all()
+    location = location_name
+    return render(request, 'location.html', {"location_images": location_images, "location": location, "locations":locations})
+
     
