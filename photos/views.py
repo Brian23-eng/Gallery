@@ -30,4 +30,4 @@ def get_image_by_location(request,location_name):
     location = location_name
     return render(request, 'location.html', {"location_images": location_images, "location": location, "locations":locations})
 
-    
+

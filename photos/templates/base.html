@@ -12,16 +12,16 @@
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Open+Sans+Condensed:300|Yanone+Kaffeesatz&display=swap" rel="stylesheet">{% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Josefin+Slab|Open+Sans+Condensed:300|Yanone+Kaffeesatz&display=swap" rel="stylesheet">{% endblock %}
 </head>
 
-<body>
+<body class="back">
     {% include "navbar.html" %}
     <div class="container">
         {% block content %}{% endblock %} {% block scripts %}
-        <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery-3.4.1.js">
+        <script type="text/javascript" src="{{ STATIC_URL }} /static/js/jquery-3.4.1.js">
         </script>
-        <script type="text/javascript" src="{{ STATIC_URL }} /static/scripts.js">
+        <script type="text/javascript" src="{{ STATIC_URL }} /static/js/scripts.js">
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -36,6 +36,17 @@
             document.execCommand("copy");
         }
     </script>
+
+    <footer class="page-footer">
+
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 sticky-bottom foot">Created by BranTech © 2019 Copyright:
+
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 </body>
 
 </html>

@@ -3,13 +3,17 @@
 <hr>
 
 <div class="container">
+    <p class="text-center intro">Welcome to Bran's Gallery, the best in town and you'll wanna comment on it. The available categories include:</p>
+    <p class="text-center ar">(Art, Photoshop and Food)</p>
+
+
     <div class="row">
 
         {% for image in images %}
 
         <div class="col-md-4 image-box">
-            <div class="card">
-                <img class="card-img-top " id="img{{ image.id }} " src="{{image.image.url}}" width="200px" alt="Card image cap" data-toggle="modal" data-target="#myModal{{ forloop.counter }}">
+            <div class="card shad">
+                <img class="card-img-top pic " id="img{{ image.id }} " src="{{image.image.url}}" width="200px" alt="Card image cap" data-toggle="modal" data-target="#myModal{{ forloop.counter }}">
 
 
                 <!-- Modal -->

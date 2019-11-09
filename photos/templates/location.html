@@ -2,14 +2,14 @@
 
 <hr>
 <div class="container text-center">
-    <h3>Pictures shot in {{location}} </h3>
+    <h3 class="intro">Pictures shot in {{location}} </h3>
 
 </div>
 <div class="container">
     <div class="row">
 
         {% for image in location_images %}
-        <div class="col-md-4">
+        <div class="col-md-4 image-box">
             <div class="card" style="width:auto;">
                 <img class="card-img-top" id="img{{ image.id }}" src="{{image.image.url}}" width="200px" alt="Card image cap" data-toggle="modal" data-target="#myModal{{ forloop.counter }}">
 
@@ -20,16 +20,17 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title text-center" id="exampleModalLongTitle"> {{image.image_name}}</h3>
+                                <h3 class="modal-title text-center name" id="exampleModalLongTitle"> {{image.image_name}}</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                             </div>
                             <div class="modal-body text-center">
-                                <img class="card-img-top" id="img{{image.id}}" src="{{image.image.url}}" alt="Card image cap">
-                                <p class="card-text">Photo description : {{image.image_description}}.</p>
-                                <p class="card-text">Shot in : {{image.location}}</p>
-                                <p class="card-text">Category : {{image.category}}</p>
+
+                                <img class="card-img-top" id="img{{image.id}}" src="{{image.image.url}}" width="150px" alt="Card image cap">
+                                <p class="card-text photo">Photo description : {{image.image_description}}.</p>
+                                <p class="card-text shot">Shot in : {{image.location}}</p>
+                                <p class="card-text cate">Category : {{image.category}}</p>
                                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
                                     <input id="{{image.id}}-url" class="form-control input-md responsive" type="text" value="https://bran's gallery.herokuapp.com{{image.image.url}}">
                                 </div>
