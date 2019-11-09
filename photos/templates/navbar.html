@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'photos'%}">Bran' Gallery</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top cool">
+    <a class="navbar-brand " id="gal" href="{% url 'photos'%}">Bran's Gallery</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'photos'%}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link home" href="{% url 'photos'%}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle location" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Locations
               </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
@@ -27,11 +27,12 @@
 
             <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_image' %}">
 
-                <div class="input-group rat">
+                <div class="input-group futa">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search Category" aria-label="Search">
                     <div class="input-group-btn">
-                        <button class="btn btn-outline-default my-2 my-sm-0 rat" type="submit">Search</button>
+                        <button class="btn btn-outline my-2 my-sm-0" id="rat" type="submit">Search</button>
                     </div>
+
                 </div>
 
             </form>

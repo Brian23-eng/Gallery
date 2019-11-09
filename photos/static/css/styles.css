@@ -1,11 +1,80 @@
-.cool {
-    padding-top: 90px;
+.modal {
+    text-align: center;
+    padding: 0!important;
 }
 
-.img1 {
-    padding-top: 90px;
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
 }
 
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.home,
+.location {
+    font-size: 15px;
+}
+
+#gal {
+    font-size: 35px;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+.futa,
 .rat {
-    margin-left: 120px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.cate,
+.photo,
+.shot {
+    font-size: 15px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 70px;
+    color: black;
+}
+
+.photo {
+    padding-top: 30px;
+}
+
+.name {
+    font-size: 35px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.image-box {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 540px;
+}
+
+.image-box img {
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+
+.image-box:hover img {
+    transform: scale(1.1);
 }

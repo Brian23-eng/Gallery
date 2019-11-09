@@ -12,17 +12,30 @@
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Material Design Bootstrap -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/css/mdb.min.css" rel="stylesheet"> {% endblock %} -->
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Open+Sans+Condensed:300|Yanone+Kaffeesatz&display=swap" rel="stylesheet">{% endblock %}
 </head>
 
 <body>
     {% include "navbar.html" %}
     <div class="container">
         {% block content %}{% endblock %} {% block scripts %}
+        <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery-3.4.1.js">
+        </script>
+        <script type="text/javascript" src="{{ STATIC_URL }} /static/scripts.js">
+        </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         {% bootstrap_javascript %} {% endblock %}
     </div>
+
+
+
+    <script>
+        function copy(element) {
+            $(element).select();
+            document.execCommand("copy");
+        }
+    </script>
 </body>
 
 </html>
