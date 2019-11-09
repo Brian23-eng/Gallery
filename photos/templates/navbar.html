@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'photos'%}">Bran' Gallery</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -22,9 +22,20 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <!-- Adding a search form  -->
+        <div class="col-sm-4 col-md-4 navbar-right">
+
+            <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_image' %}">
+
+                <div class="input-group rat">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Category" aria-label="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-outline-default my-2 my-sm-0 rat" type="submit">Search</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <!-- search form end -->
     </div>
 </nav>
