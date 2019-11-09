@@ -11,12 +11,12 @@
         {% for image in location_images %}
         <div class="col-md-3 image-box">
             <div class="card shad" style="width:auto;">
-                <img class="card-img-top" id="img{{ image.id }}" src="{{image.image.url}}" width="200px" alt="Card image cap" data-toggle="modal" data-target="#myModal{{ forloop.counter }}">
+                <img class="card-img-top" id="img{{ image.id }}" src="{{image.image.url}}" width="100px" alt="Card image cap" data-toggle="modal" data-target="#myModal{{ forloop.counter }}">
 
 
 
                 <!-- Modal -->
-                <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade animated fadeInUp" id="myModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">

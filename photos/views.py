@@ -9,7 +9,7 @@ def photos(request):
     
     return render(request,'photos.html', {'images':images, 'locations':locations})
 
-def search_image(request):
+def search_results(request):
     categories = Category.objects.all()
     locations = Location.objects.all()
     if 'image' in request.GET and request.GET['image']:
