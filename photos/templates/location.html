@@ -9,8 +9,8 @@
     <div class="row">
 
         {% for image in location_images %}
-        <div class="col-md-4 image-box">
-            <div class="card" style="width:auto;">
+        <div class="col-md-3 image-box">
+            <div class="card shad" style="width:auto;">
                 <img class="card-img-top" id="img{{ image.id }}" src="{{image.image.url}}" width="200px" alt="Card image cap" data-toggle="modal" data-target="#myModal{{ forloop.counter }}">
 
 

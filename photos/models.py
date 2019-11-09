@@ -71,8 +71,8 @@ class Image(models.Model):
         cls.objects.filter(id=id).update(image=value)
         
     @classmethod
-    def get_image_by_id(cls):
-        image = cls.objects.filter(id= id).all()
+    def get_image_by_id(cls, search_term):
+        image = cls.objects.filter(image__image_id__icontains=search_term)
         return image
 
     @classmethod

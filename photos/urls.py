@@ -7,7 +7,7 @@ urlpatterns=[
     path('', views.photos, name='photos'),
     path('search/', views.search_image, name='search_image'),
     path('location/(<location_name>\)/', views.get_image_by_location, name='location'),
-    
+    # path('details/',views.image,name ='details') 
 ]
 
 

@@ -30,4 +30,12 @@ def get_image_by_location(request,location_name):
     location = location_name
     return render(request, 'location.html', {"location_images": location_images, "location": location, "locations":locations})
 
+# def image(request, image_id):
+#     try:
+#         image = Image.get_image_by_id(image_id)
+#     except DoesNotExists:
+#         raise Http404()
+#     return render(request, "details.html", {"image":image})
+            
+
 
