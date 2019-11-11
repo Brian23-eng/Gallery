@@ -15,9 +15,10 @@
               </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
                     {% for location in locations %}
-                    <a class="dropdown-item" href="{% url 'location' location_name=location.location_name %}">
-                        <p>{{location.location_name}}</p>
-                    </a>
+                    <ul class="dropdown-item">
+                        <li href="{% url 'location' location_name=location.location_name %}">{{location.location_name}}</li>
+                    </ul>
+
                     {% endfor %}
                 </div>
             </li>
@@ -28,7 +29,7 @@
             <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
 
                 <div class="input-group futa">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search Category" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Category" aria-label="Search" name="image">
                     <div class="input-group-btn">
                         <button class="btn btn-outline my-2 my-sm-0" id="rat" type="submit">Search</button>
                     </div>
